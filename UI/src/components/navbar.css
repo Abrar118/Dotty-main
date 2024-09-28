@@ -1,0 +1,42 @@
+.nav-bar{
+    background-color: #0f0f0f;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(151, 23, 23, 0.1);
+}
+
+.tabs{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:  center;
+
+}
+
+.tabs li{
+    margin: 0 20px;
+}
+
+.tabs a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    background-color: #357ABD;
+
+}
+
+.tabs a:hover{
+    background-color: #235A98;
+    transform: scale(1.1);
+}
+
+.tabs a.active{
+    background-color: #1B4A75;
+}

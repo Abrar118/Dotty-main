@@ -1,26 +1,22 @@
-import { useEffect, useState } from "react";
-import PlayerCircle from "./components/playerCircle";
-import ScoreColumn from "./components/scoreColumn";
-import playerimage1 from "./assets/player1.jpg";
-import playerimage2 from "./assets/player2.jpg";
+import React from "react";
 import "./App.css";
+import CurrentScore from "./CurrentScore";
+import Scorelist from "./Scorelist";
+import NavBar from "./components/navbar";
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 function App() {
-	const player1 = { image: playerimage1, name: "Waliza" };
-	const player2 = { image: playerimage2, name: "Nishat" };
-	const [player1Score, setPlayer1Score] = useState(0);
-	const [player2Score, setPlayer2Score] = useState(0);
-
-  useEffect(() => {
-   
-  }, []);
 
 	return (
-		<div className="main-container">
-			<PlayerCircle player={player1} />
-			<ScoreColumn player1={player1Score} player2={player2Score} />
-			<PlayerCircle player={player2} />
-		</div>
+		<Router>
+			<NavBar/>
+			<Routes>
+               <Route path="/" element={<CurrentScore/>} />
+               <Route path="/currentscore" element={<CurrentScore/>} />
+               <Route path="/scorelist" element={<Scorelist/>} />
+			</Routes>
+			
+		</Router>
 	);
 }
 
