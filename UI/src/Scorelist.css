@@ -1,26 +1,40 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    /* min-width: 1250px; */
+    background:linear-gradient(to right,#1e1e1e,#3a3a3a);
+}
 .screen{
-    background-color: black;
+    background-color: #331b75;
     min-height: 100vh;
-    min-width: 1500px;
+    min-width: 1320px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.score-list-container{
-    min-width: 900px;
-    min-height: 900px;
-    margin: 0 auto;
     padding: 20px;
-    background-color: #8b71d1;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.score-list-container{
+    width: 500px;
+    /* width: 100%;
+    min-height: 760px; */
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #8b71d1;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    justify-content: center;
+}
+.score-list-container:hover{
+  transform: scale(1.02);
+}
 .title{
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .score-list{
@@ -32,24 +46,43 @@
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .score-item:hover{
     background-color: #f1f1f1;
+    transform: translateY(-2px);
 
 }
 
 .player-name{
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color:#333;
 }
 
 .player-score{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #ff6347;
+    font-weight: bold;
+}
+
+@media (max-width:600px) {
+    .score-list-container{
+        width:95%;
+        padding: 15px;
+
+    }
+
+    .title{
+        font-size: 1.8rem;
+    }
+
+    .player-name,.player-score{
+        font-size: 1rem;
+    }
 }
